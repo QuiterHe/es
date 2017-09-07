@@ -45,3 +45,33 @@ GET /_cluster/health
 
 ## 分页
 深度分页有着较大的性能消耗
+
+## 数据类型
+在es中，数据大致分为两种类型：
+> 1. 确切值
+> 2. 全文文本（非结构化数据）
+
+## 倒排索引
+对于全文文本，es在对文本分析后建立了一个倒排索引
+
+## 分析过程
+> 1. 字符过滤器 （去除HTML标签，将 &  转化为 and）
+> 2. 分词器 （形成token或terms）
+> 3. 标记过滤 （过滤token）
+以上三种处理器可以自定义使用
+
+## 分析器
+内建的分析器
+
+## 测试分析器
+GET /_analyze?analyzer=standard&text=Text to analyze
+
+## 字段类型
+核心简单字段类型
+String | string
+Whole number | byte, short, integer, long
+Floating point | float,double
+Boolean | boolean
+
+复合核心字段类型
+Date | date
